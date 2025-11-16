@@ -88,10 +88,24 @@ Global styling is handled through styles.css and index.css, using:
 
 ## Screenshot
 
+**1.Create a Account**
+
 ![Screenshot 1](src/assets/screenshots/create-account.png)
+
+**2.Login Page**
+
 ![Screenshot 2](src/assets/screenshots/login-page.png)
+
+**3.Active Students**
+
 ![Screenshot 3](src/assets/screenshots/active-student.png)
+
+**4.Completed Students**
+
 ![Screenshot 4](src/assets/screenshots/completed-student.png)
+
+**5.Progress[High-Low]**
+
 ![Screenshot 5](src/assets/screenshots/progress-high-low.png)
 
 
