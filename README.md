@@ -1,28 +1,30 @@
 # Student Course Dashboard
 
-A small React-based dashboard for viewing and managing student progress in course modules. This repository is a lightweight front-end demo that includes searchable/filterable student cards, a responsive grid layout, a simple SVG-based progress visualization, and a mock authentication flow using browser localStorage.
+A clean and responsive React-based dashboard built to display student progress across different course modules.
+The application uses mock JSON data and includes a simple authentication flow using localStorage.
+It focuses on UI clarity, interactivity, and modern component-based design.
 
----
 
 ## Features
 
-- Responsive cards grid for student entries
-- Search, filter and sort controls
-- Progress visualization component (donut + distribution pie)
-- Student card with avatar (initials), status badge, progress and enrollment date
-- Mock authentication (register / sign in) stored in `localStorage`
-- Dark mode toggle and polished styling
+- Responsive grid layout for displaying student cards
+- Search, filter, and sort options
+- Progress visualization (donut chart + progress distribution)
+- Student profile card with initials avatar, status tag, and enrollment date
+- Simple register/login flow stored in localStorage
+- Light/Dark mode toggle
+- Organized, modular React component structure
 
 ## Project Structure
 
-- `index.html` — app entry
-- `src/main.jsx` — app bootstrap (wraps `App` with the `AuthProvider`)
-- `src/App.jsx` — main layout, filters, and card grid
-- `src/components/` — UI components (StudentCard, ProgressBar, ProgressChart, Login, etc.)
-- `src/auth/AuthProvider.jsx` — simple auth context using `localStorage`
-- `src/data/students.json` — sample student data (10 entries)
-- `src/assets/` — folder for images, logos, and static assets
-- `src/styles.css` & `src/index.css` — global styles
+- index.html                 → Entry point
+- src/main.jsx               → App bootstrap (ReactDOM + Auth Provider)
+- src/App.jsx                → Main layout with filters and student grid
+- src/components/            → UI components
+- src/auth/AuthProvider.jsx  → LocalStorage-based authentication
+- src/data/students.json     → Mock student data
+- src/assets/                → Images and static files
+- src/styles.css / index.css → Global styles
 
 ## Quick Start (development)
 
@@ -35,36 +37,54 @@ npm run dev
 
 Open the page that Vite serves (usually `http://localhost:5173`).
 
-## Authentication (local demo)
+## Authentication (Demo Only)
 
-This project uses a mock, client-side authentication flow suitable for demos only:
+The app includes a lightweight authentication flow meant purely for demonstration:
 
-- Registered users are stored in browser `localStorage` under the key `scd_users`.
-- The currently signed-in user is stored under `scd_user`.
-- Passwords are encoded with `btoa()` (NOT secure) — this is only to demonstrate a simple login flow.
+- Registered users are saved in localStorage under scd_users
+- Logged-in user is stored under scd_user
+- Passwords are encoded using btoa() (not secure — only for mock demo)
 
-How to test:
+How to use:
 
-1. Open the app in your browser.
-2. Click `Create account` on the login form and register a username/password.
-3. After registration you are automatically signed in.
-4. To sign out, click the `Sign out` button in the top-right.
-
-If you prefer a quick demo, use the `Demo` button to prefill `demo`/`demo` and then create the account first with those credentials.
+1. Open the app
+2. Click Create account
+3. Enter a username and password
+4. You’ll be signed in automatically
+5. Use the Sign out button on the top-right when needed
+   
+There’s also a Demo button that pre-fills demo/demo for quick testing.
 
 ## Data
 
-- The dataset is `src/data/students.json`. Add or modify entries there to change what the UI displays.
+- All student information lives in:
+  
+    src/data/students.json
+  
 - Each student object supports the fields currently used by the UI: `id`, `name`, `course`, `progress` (0-100), `status` (string), `enrollmentDate`.
 
 ## Charts
 
-- `src/components/ProgressChart.jsx` provides a small SVG donut showing average progress and a pie distribution of students by progress buckets (0–25, 26–50, 51–75, 76–100).
-- The chart is computed from the active (filtered) student list so it updates as you search/filter.
+The component:
+
+  src/components/ProgressChart.jsx
+
+renders:
+
+- A donut chart showing average progress
+  
+- A pie representation of students grouped by progress ranges
+(0–25, 26–50, 51–75, 76–100)
+
+Charts update automatically when filters/search change.
 
 ## Styling
 
-- Global styles live in `src/styles.css`. The project uses CSS variables for theming and includes a dark-mode class you can toggle via the UI.
+Global styling is handled through styles.css and index.css, using:
+
+- CSS variables for easy theming
+- A dark class for dark mode
+- Reusable utility classes
 
 ## Screenshot
 
@@ -75,22 +95,33 @@ If you prefer a quick demo, use the `Demo` button to prefill `demo`/`demo` and t
 ![Screenshot 5](src/assets/screenshots/progress-high-low.png)
 
 
-## Security & Production Notes
+## Deployment link
 
-- This project is a front-end demo; do NOT use the mock `localStorage` authentication in production.
-- For a production-ready auth system, use a backend API with hashed passwords (bcrypt or Argon2), HTTPS, and secure session management (JWT or server-side sessions).
+**Live Demo:** unrivaled-jalebi-a0526a.netlify.app
 
-## Next Improvements (ideas)
 
-- Replace the mock auth with a minimal Express + SQLite backend and JWT authentication.Hig
-- Add interactive chart tooltips and animations using a chart library (Chart.js, Recharts, etc.).
-- Add role-based UI or per-student details + edit flows.
-- Add unit tests for key components and flows.
+## Notes on Security
 
-## Where to look in the code
+This is a frontend-only demo.
+LocalStorage-based auth is not suitable for real applications.
+For production, use:
+ - Backend API
+ - Hashed passwords (bcrypt / Argon2)
+ - JWT or server-side sessions
+ - HTTPS
 
-- `src/components/StudentCard.jsx` — update card layout
-- `src/components/ProgressChart.jsx` — chart implementation
-- `src/auth/AuthProvider.jsx` — auth functions (`signin`, `register`, `signout`)
+## Possible Enhancements
 
+- Replace mock auth with a small Express + SQLite backend
+- Add animations and tooltips using Chart.js or Recharts
+- Add detailed student profile pages
+- Role-based access control
+- Unit tests for components and auth logic
+
+## Important Files to Explore
+
+- StudentCard.jsx — student layout and UI
+- ProgressChart.jsx — chart calculation + SVG rendering
+- AuthProvider.jsx — login, registration, logout logic
+  
 ---
