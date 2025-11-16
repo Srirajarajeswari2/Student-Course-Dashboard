@@ -94,5 +94,3 @@ If you prefer a quick demo, use the `Demo` button to prefill `demo`/`demo` and t
 - `src/auth/AuthProvider.jsx` — auth functions (`signin`, `register`, `signout`)
 
 ---
-
-If you'd like, I can scaffold a small backend to replace the mock auth, or add richer charts/tooltips. Tell me which option you prefer and I will implement it.
