@@ -68,12 +68,13 @@ If you prefer a quick demo, use the `Demo` button to prefill `demo`/`demo` and t
 
 ## Screenshot
 
-Create a Account-(image-1.png)
-Login Page-(image.png)
-Student Dashboard-(image-2.png)
-Active Student-(image-3.png)
-Completed Student-(image-4.png)
-Progress[High-Low]-(image-5.png)
+Below are example placeholder screenshots included in the repository. Replace these with your real images (same folder) when ready.
+
+![Screenshot 1](src/assets/screenshots/screenshot-1.svg)
+
+![Screenshot 2](src/assets/screenshots/screenshot-2.svg)
+
+When adding your own screenshots, name them clearly (for example `login.png`, `dashboard.png`) and place them in `src/assets/screenshots/`.
 
 ## Security & Production Notes
 
